@@ -44,7 +44,8 @@ ol[role="list"] {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  max-height: 100vh;
   line-height: 1.5;
   background-color: var(--color-bg);
 }
@@ -137,7 +138,7 @@ p {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(3rem, 2.8182rem + 0.9091vw, 3.5rem);
   font-weight: 500;
 }
 
@@ -232,7 +233,7 @@ h1 {
 .bento-grid__accounts-text,
 .bento-grid__schedule-text,
 .bento-grid__social-media-heading {
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 1.4545rem + 0.7273vw, 2rem);
   font-weight: 600;
   line-height: 0.9;
 }
@@ -298,7 +299,7 @@ h1 {
 .bento-grid__grow-followers-heading,
 .bento-grid__create-post-heading,
 .bento-grid__AI-heading {
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 1.7273rem + 0.3636vw, 2rem);
   font-weight: 500;
   line-height: 0.9;
 }
@@ -398,7 +399,7 @@ h1 {
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 65em) {
   .container {
     width: 80%;
     margin-inline: auto;
@@ -407,10 +408,6 @@ h1 {
 
   .card-inline-padding {
     padding-inline: 1.4em;
-  }
-
-  h1 {
-    font-size: 3.3rem;
   }
 
   .bento-grid {
@@ -424,14 +421,6 @@ h1 {
   .bento-grid__growth,
   .bento-grid__create-post {
     flex-direction: column;
-  }
-
-  .bento-grid__grow-followers-heading,
-  .bento-grid__create-post-heading,
-  .bento-grid__AI-heading {
-    font-size: 2rem;
-    font-weight: 500;
-    line-height: 0.9;
   }
 
   /*----------------
@@ -460,8 +449,8 @@ h1 {
 
   .bento-grid__create-post-heading {
     letter-spacing: -2px;
-    font-weight: 600;
-    font-size: 2.5rem;
+    font-weight: 500;
+    font-size: clamp(1.8rem, 1.5455rem + 1.2727vw, 2.5rem);
   }
 
   /*-------------
@@ -493,12 +482,6 @@ h1 {
 
   .bento-grid__accounts {
     padding-inline-end: unset;
-  }
-
-  .bento-grid__accounts-text,
-  .bento-grid__schedule-text,
-  .bento-grid__social-media-heading {
-    font-size: 2rem;
   }
 
   .bento-grid__accounts-text {
@@ -540,7 +523,7 @@ h1 {
   .bento-grid__AI-heading {
     letter-spacing: -2px;
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 0.9;
   }
 
@@ -581,7 +564,7 @@ h1 {
   }
 
   .bento-grid__grow-followers-heading {
-    font-size: 2.3rem;
+    font-size: clamp(1.8rem, 1.6182rem + 0.9091vw, 2.3rem);;
     font-weight: 500;
     text-align: left;
     margin-block-start: unset;

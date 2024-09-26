@@ -1,0 +1,589 @@
+/*---------------------
+  CSS Reset
+-----------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", system-ui;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/*-------
+  Colors
+--------*/
+
+:root {
+  --color-purple-100: hsl(254, 88%, 90%);
+  --color-purple-500: hsl(256, 67%, 59%);
+  --color-yellow-100: hsl(31, 66%, 93%);
+  --color-yellow-500: hsl(39, 100%, 71%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 7%);
+  --color-bg: hsl(0, 0%, 96%);
+}
+
+/*---------------
+  Color Classes
+----------------*/
+
+.color-purple-500 {
+  color: var(--color-purple-500);
+}
+
+.color-yellow-500 {
+  color: var(--color-yellow-500);
+}
+
+/*--------
+  Styling
+---------*/
+
+p {
+  font-size: 1.2rem;
+  margin-block-start: 1em;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.container {
+  width: 92%;
+  margin-inline: auto;
+  margin-block: 2em;
+}
+
+.card-inline-padding {
+  padding-inline: 1em;
+}
+
+.bento-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 1.8em;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven"
+    "eight";
+}
+
+.bento-grid > *:nth-child(1) {
+  grid-area: one;
+}
+
+.bento-grid > *:nth-child(2) {
+  grid-area: two;
+}
+
+.bento-grid > *:nth-child(3) {
+  grid-area: three;
+}
+
+.bento-grid > *:nth-child(4) {
+  grid-area: four;
+}
+
+.bento-grid > *:nth-child(5) {
+  grid-area: five;
+}
+
+.bento-grid > *:nth-child(6) {
+  grid-area: six;
+}
+
+.bento-grid > *:nth-child(7) {
+  grid-area: seven;
+}
+
+.bento-grid > *:nth-child(8) {
+  grid-area: eight;
+}
+
+.bento-grid > * {
+  border-radius: 0.9em;
+}
+
+/*---------
+  Reviews
+----------*/
+
+.bento-grid__reviews {
+  text-align: center;
+  background-color: var(--color-purple-500);
+  color: var(--color-white);
+  padding: 2.5em 1em;
+}
+
+.bento-grid__reviews-stars {
+  margin-inline: auto;
+  width: 13em;
+  margin-block-start: 1em;
+}
+
+/*---------
+  Accounts
+----------*/
+
+.bento-grid__accounts {
+  overflow: hidden;
+  padding-block: 1.5em;
+  background-color: var(--color-white);
+}
+
+.bento-grid__accounts-text,
+.bento-grid__schedule-text,
+.bento-grid__social-media-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.bento-grid__accounts-img {
+  width: 100%;
+  max-width: 370px;
+}
+
+/*---------
+  Schedule
+----------*/
+
+.bento-grid__schedule {
+  background-color: var(--color-yellow-500);
+}
+
+.bento-grid__schedule-img {
+  margin-block-start: 1em;
+  max-width: 370px;
+  width: 100%;
+}
+
+/*-------------
+  Social Media
+--------------*/
+
+.bento-grid__social-media {
+  padding-block: 1.5em;
+  text-align: center;
+  background-color: var(--color-purple-100);
+}
+
+.bento-grid__social-media-img {
+  margin-block-start: 1.5em;
+  width: 90%;
+  max-width: 370px;
+  margin-inline: auto;
+}
+
+.bento-grid__social-media-text {
+  max-inline-size: 25ch;
+  margin-inline: auto;
+}
+
+/*----------------
+  Grow Followers
+-----------------*/
+
+.bento-grid__grow-followers {
+  background-color: var(--color-purple-500);
+  color: var(--color-white);
+  padding-block: 2em;
+  text-align: center;
+}
+
+.bento-grid__grow-followers-img {
+  width: 70%;
+  max-width: 370px;
+  margin-inline: auto;
+}
+
+.bento-grid__grow-followers-heading,
+.bento-grid__create-post-heading,
+.bento-grid__AI-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 0.9;
+}
+
+/*----------------
+  Audience Growth 
+-----------------*/
+
+.bento-grid__growth {
+  background-color: var(--color-white);
+  padding-block: 2em;
+  text-align: left;
+}
+
+.bento-grid__growth-img,
+.bento-grid__create-post-img {
+  width: 55%;
+  max-width: 280px;
+  margin-block-start: 1.5em;
+}
+
+.bento-grid__growth-paragraph {
+  margin-block-start: 0.4em;
+}
+
+/*-------------
+  Create Post 
+-------------*/
+
+.bento-grid__create-post {
+  padding: 2em;
+  background-color: var(--color-yellow-100);
+}
+
+.bento-grid__create-post-heading,
+.bento-grid__AI-heading {
+  font-weight: 600;
+}
+
+.bento-grid__create-post-heading,
+.bento-grid__AI-heading {
+  margin-block-start: 0;
+}
+
+/*-------------
+  AI Content 
+-------------*/
+
+.bento-grid__AI {
+  background-color: var(--color-yellow-500);
+  padding-block: 2em;
+}
+
+.bento-grid__AI-img {
+  width: 75%;
+  max-width: 350px;
+  margin-block-start: 1.5em;
+}
+
+/*----------------
+  Media Queries
+-----------------*/
+
+@media screen and (min-width: 45em) {
+  .bento-grid {
+    grid-template-areas:
+      "one one"
+      "four three"
+      "four two"
+      "six six"
+      "eight five"
+      "seven seven";
+  }
+
+  .bento-grid__growth,
+  .bento-grid__create-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  /*----------------
+    Audience Growth 
+  -----------------*/
+
+  .bento-grid__growth-img {
+    width: 40%;
+  }
+
+  /*-------------
+    Create Post 
+  -------------*/
+
+  .bento-grid__create-post-img {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 80%;
+    margin-inline: auto;
+    max-width: 1200px;
+  }
+
+  .card-inline-padding {
+    padding-inline: 1.4em;
+  }
+
+  h1 {
+    font-size: 3.3rem;
+  }
+
+  .bento-grid {
+    grid-template-areas:
+      "seven one one four"
+      "seven two three four"
+      "eight two three four"
+      "eight six five five";
+  }
+
+  .bento-grid__growth,
+  .bento-grid__create-post {
+    flex-direction: column;
+  }
+
+  .bento-grid__grow-followers-heading,
+  .bento-grid__create-post-heading,
+  .bento-grid__AI-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 0.9;
+  }
+
+  /*----------------
+    Grow Followers
+  -----------------*/
+
+  .bento-grid__grow-followers {
+    display: flex;
+  }
+
+  /*-------------
+    Create Post 
+  -------------*/
+
+  .bento-grid__create-post-img {
+    width: 100%;
+    max-width: 170px;
+  }
+
+  .bento-grid__create-post {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .bento-grid__create-post-heading {
+    letter-spacing: -2px;
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+
+  /*-------------
+    Social Media
+  --------------*/
+
+  .bento-grid__social-media {
+    text-align: left;
+    overflow: hidden;
+    padding-inline-end: unset;
+  }
+
+  .bento-grid__social-media-img {
+    width: 150%;
+    max-width: 330px;
+    margin-inline: auto;
+  }
+
+  .bento-grid__social-media-text {
+    max-inline-size: 15ch;
+    margin-inline: unset;
+    font-size: 1.1rem;
+    margin-inline-end: 0.5em;
+  }
+
+  /*---------
+    Accounts
+  ----------*/
+
+  .bento-grid__accounts {
+    padding-inline-end: unset;
+  }
+
+  .bento-grid__accounts-text,
+  .bento-grid__schedule-text,
+  .bento-grid__social-media-heading {
+    font-size: 2rem;
+  }
+
+  .bento-grid__accounts-text {
+    margin-inline-end: 0.6em;
+  }
+
+  .bento-grid__accounts-img {
+    width: 130%;
+  }
+
+  /*---------
+    Schedule
+  ----------*/
+
+  .bento-grid__schedule {
+    display: grid;
+  }
+
+  .bento-grid__schedule-img-container{
+    overflow: hidden;
+    height: 115px;
+    align-self: end;
+  }
+
+  /*-------------
+    AI Content 
+  -------------*/
+
+  .bento-grid__AI {
+    background-color: var(--color-yellow-500);
+    padding-block: 2em;
+  }
+
+  .bento-grid__AI-img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .bento-grid__AI-heading {
+    letter-spacing: -2px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 0.9;
+  }
+
+  /*----------------
+    Audience Growth 
+  -----------------*/
+
+  .bento-grid__growth {
+    display: unset;
+  }
+
+  .bento-grid__growth-img {
+    width: 90%;
+    max-width: unset;
+    margin-inline-end: auto;
+  }
+
+  .bento-grid__growth-paragraph {
+    margin-block-start: 0.4em;
+  }
+
+  /*----------------
+    Grow Followers
+  -----------------*/
+
+  .bento-grid__grow-followers {
+    padding-inline: 1.5em;
+    padding-block: unset;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .bento-grid__grow-followers-img {
+    width: 100%;
+    max-width: 230px;
+    margin-inline: unset;
+    object-fit: contain;
+  }
+
+  .bento-grid__grow-followers-heading {
+    font-size: 2.3rem;
+    font-weight: 500;
+    text-align: left;
+    margin-block-start: unset;
+  }
+}
